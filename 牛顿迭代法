@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main(){
+	double x0,x,s,f,fs,a,b,c,d;
+	scanf("%lf%lf%lf%lf",&a,&b,&c,&d);
+	x0=1.0;
+	do{
+		f=a*x0*x0*x0+b*x0*x0+c*x0+d;
+		fs=3.0*a*x0*x0+2.0*x0*b+c;
+		s=f/fs;
+		x=x0-s;
+		x0=x;
+	}while(fabs(s)>1e-3);
+		printf("x=%lf",x);
+	system("pause");
+}
